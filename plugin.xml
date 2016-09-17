@@ -5,12 +5,19 @@
    <description>Parse.Push plugin for phonegap/cordova/ionic framework</description>
     <keywords>cordova,phonegap,ionic framework, parse server, parse push, push notification</keywords>
 
+   <preference name="APP_ID" />
+   <preference name="SERVER_URL" />
+   <preference name="CLIENT_KEY" />
+    
    <js-module src="www/parse-push-plugin.js" name="ParsePushPlugin">
       <clobbers target="ParsePushPlugin" />
    </js-module>
 
    <platform name="android">
       <config-file target="res/xml/config.xml" parent="/*">
+         <preference name="ParseAppId" value="$APP_ID" />
+         <preference name="ParseServerUrl" value="$SERVER_URL" />
+         <preference name="ParseClientKey" value="$CLIENT_KEY" />
          <feature name="ParsePushPlugin">
             <param name="android-package" value="github.taivo.parsepushplugin.ParsePushPlugin" />
          </feature>
@@ -66,6 +73,9 @@
 
    <platform name="ios">
       <config-file target="config.xml" parent="/*">
+         <preference name="ParseAppId" value="$APP_ID" />
+         <preference name="ParseServerUrl" value="$SERVER_URL" />
+         <preference name="ParseClientKey" value="$CLIENT_KEY" />
          <feature name="ParsePushPlugin">
             <param name="ios-package" value="ParsePushPlugin" />
             <param name="onload" value="true" />
@@ -93,6 +103,11 @@
    </platform>
 
    <platform name="windows">
+     <config-file target="config.xml" parent="/*">
+         <preference name="ParseAppId" value="$APP_ID" />
+         <preference name="ParseServerUrl" value="$SERVER_URL" />
+         <preference name="ParseClientKey" value="$CLIENT_KEY" />
+     </config-file>
      <js-module src="src/windows/jsTimezoneDetect.min.js" name="jsTimezoneDetect" />
      <js-module src="src/windows/ParsePushPluginProxy.js" name="ParsePushPluginProxy">
        <merges target="" />

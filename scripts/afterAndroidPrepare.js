@@ -11,7 +11,7 @@ module.exports = function(context) {
 
    //
    // detect parse.com or parse-server mode
-   var parseServerUrl = configXml.data.find('preference[@name="ParseServerUrl"]').get('value');
+   var parseServerUrl = configXml.data.find('preference[@name="ParseHosted"]').get('value');
 
    if(parseServerUrl.toUpperCase() !== "PARSE_DOT_COM"){
       //
