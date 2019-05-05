@@ -3,8 +3,8 @@ module.exports = function(context) {
    // Copy gcm sender id from config.xml into AndroidManifest
    //
 
-   var path = context.requireCordovaModule('path');
-   var ET = context.requireCordovaModule('elementtree');
+   var path = require('path');
+   var ET = require('elementtree');
    var ConfigFile = context.requireCordovaModule("cordova-common").ConfigFile;
 
    var configXml = new ConfigFile(context.opts.projectRoot, null, 'config.xml');
